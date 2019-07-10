@@ -1,0 +1,336 @@
+{
+	"info": {
+		"_postman_id": "917d734e-4ba9-4c14-8bfb-78be2d07f6b6",
+		"name": "debugging-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "BookEndpoints",
+			"item": [
+				{
+					"name": "addBook",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"IntelliJ Guide\",\n\t\"author\": \"John Doe\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/debugging-app/api/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"debugging-app",
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBook",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/debugging-app/api/books/IntelliJ Guide",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"debugging-app",
+								"api",
+								"books",
+								"IntelliJ Guide"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllBooks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/debugging-app/api/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"debugging-app",
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateBook",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"author\": \"Janice Doe\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/debugging-app/api/books/IntelliJ Guide",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"debugging-app",
+								"api",
+								"books",
+								"IntelliJ Guide"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeBook",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/debugging-app/api/books/IntelliJ Guide",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"debugging-app",
+								"api",
+								"books",
+								"IntelliJ Guide"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LibraryEndpoints",
+			"item": [
+				{
+					"name": "addLibrary",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Javatown Library\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/debugging-app/api/libraries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"debugging-app",
+								"api",
+								"libraries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getLibrary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/debugging-app/api/libraries/Javatown Library",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"debugging-app",
+								"api",
+								"libraries",
+								"Javatown Library"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllLibraries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/debugging-app/api/libraries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"debugging-app",
+								"api",
+								"libraries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addBookToLibrary",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Networking Basics\",\n\t\"author\": \"Dr Apple\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/debugging-app/api/libraries/Javatown Library",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"debugging-app",
+								"api",
+								"libraries",
+								"Javatown Library"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeBookFromLibrary",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/debugging-app/api/libraries/Javatown Library/Networking Basics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"debugging-app",
+								"api",
+								"libraries",
+								"Javatown Library",
+								"Networking Basics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateLibrary",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Downtown Library\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/debugging-app/api/libraries/Javatown Library",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"debugging-app",
+								"api",
+								"libraries",
+								"Javatown Library"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addExistingBookToLibrary",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/debugging-app/api/libraries/Javatown Library/IntelliJ Guide",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"debugging-app",
+								"api",
+								"libraries",
+								"Javatown Library",
+								"IntelliJ Guide"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
