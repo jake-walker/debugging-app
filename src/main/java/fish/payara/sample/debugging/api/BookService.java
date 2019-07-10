@@ -3,10 +3,7 @@ package fish.payara.sample.debugging.api;
 import java.util.Collection;
 
 import javax.validation.Valid;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+import javax.ws.rs.*;
 
 import fish.payara.sample.debugging.model.Book;
 
@@ -25,4 +22,7 @@ public interface BookService {
     @POST
     public Book addBook(@Valid Book book);
 
+    @PUT
+    @Path("/{name}")
+    public Book updateBook(@PathParam("name") String name, Book book);
 }

@@ -39,4 +39,19 @@ public class BookEndpoints implements BookService {
         return model.addBook(book);
     }
 
+
+    @Override
+    public Book updateBook(String name, Book book) {
+        Book bookToUpdate = getBook(name);
+
+        if (book.getName() != null) {
+            bookToUpdate.setName(book.getName());
+        }
+
+        if (book.getAuthor() != null) {
+            bookToUpdate.setAuthor(book.getAuthor());
+        }
+
+        return bookToUpdate;
+    }
 }
