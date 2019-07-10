@@ -44,8 +44,7 @@ public class LibraryEndpoints implements LibraryService {
     @Override
     public Book addBookToLibrary(String name, Book book) {
         Library library = getLibrary(name);
-        library.getBooks().add(book);
-        model.addBook(book);
+        model.addBook(library, book);
         return book;
     }
 
