@@ -30,4 +30,8 @@ public interface LibraryService {
     @DELETE
     @Path("/{name}/{bookName}")
     public Book removeBookFromLibrary(@PathParam("name") String name, @PathParam("bookName") String bookName);
+
+    @PUT
+    @Path("/{name}")
+    public Library updateLibrary(@PathParam("name") String name, @Valid Library library);
 }

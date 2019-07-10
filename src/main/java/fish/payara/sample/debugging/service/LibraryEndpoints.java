@@ -62,4 +62,15 @@ public class LibraryEndpoints implements LibraryService {
         model.removeBook(library, book);
         return book;
     }
+
+    @Override
+    public Library updateLibrary(String name, Library library) {
+        Library libraryToUpdate = getLibrary(name);
+
+        if (library.getName() != null) {
+            libraryToUpdate.setName(library.getName());
+        }
+
+        return libraryToUpdate;
+    }
 }
