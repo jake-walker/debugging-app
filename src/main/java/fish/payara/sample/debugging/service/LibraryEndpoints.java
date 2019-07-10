@@ -73,4 +73,12 @@ public class LibraryEndpoints implements LibraryService {
 
         return libraryToUpdate;
     }
+
+    @Override
+    public Book addExistingBookToLibrary(String name, String bookName) {
+        Library library = getLibrary(name);
+        Book book = getBook(bookName);
+        model.addBook(library, book);
+        return book;
+    }
 }

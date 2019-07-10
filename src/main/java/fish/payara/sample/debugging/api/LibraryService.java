@@ -34,4 +34,9 @@ public interface LibraryService {
     @PUT
     @Path("/{name}")
     public Library updateLibrary(@PathParam("name") String name, @Valid Library library);
+
+    @POST
+    @Path("/{name}/{bookName}")
+    public Book addExistingBookToLibrary(@PathParam("name") String name, @PathParam("bookName") String bookName);
+
 }
