@@ -39,4 +39,13 @@ public class ServiceModel {
         return book;
     }
 
+    public Book removeBook(Library library, Book book) {
+        library.removeBook(book);
+        return removeBook(book);
+    }
+
+    public Book removeBook(Book book) {
+        books.remove(book);
+        return book;
+    }
 }

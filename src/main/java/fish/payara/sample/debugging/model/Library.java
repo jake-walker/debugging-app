@@ -40,4 +40,7 @@ public class Library {
         books.add(book);
     }
 
+    protected void removeBook(Book book) {
+        books.remove(book);
+    }
 }

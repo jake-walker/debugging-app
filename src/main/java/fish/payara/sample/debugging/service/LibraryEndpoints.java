@@ -35,6 +35,13 @@ public class LibraryEndpoints implements LibraryService {
                 .orElseThrow(() -> new NotFoundException("Unable to find the library with the specified name."));
     }
 
+    public Book getBook(String name) {
+        return model.getBooks().stream()
+                .filter(book -> book.getName().equals(name))
+                .findAny()
+                .orElseThrow(() -> new NotFoundException("Unable to find the book with the specified name."));
+    }
+
     @Override
     public Library addLibrary(Library library) {
         model.getLibraries().add(library);
@@ -48,4 +55,11 @@ public class LibraryEndpoints implements LibraryService {
         return book;
     }
 
+    @Override
+    public Book removeBookFromLibrary(String name, String bookName) {
+        Library library = getLibrary(name);
+        Book book = getBook(bookName);
+        model.removeBook(library, book);
+        return book;
+    }
 }

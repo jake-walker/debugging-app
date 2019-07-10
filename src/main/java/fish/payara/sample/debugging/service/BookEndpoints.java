@@ -54,4 +54,10 @@ public class BookEndpoints implements BookService {
 
         return bookToUpdate;
     }
+
+    @Override
+    public Book removeBook(String name) {
+        Book book = getBook(name);
+        return model.removeBook(book);
+    }
 }

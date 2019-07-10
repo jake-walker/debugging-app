@@ -25,4 +25,8 @@ public interface BookService {
     @PUT
     @Path("/{name}")
     public Book updateBook(@PathParam("name") String name, Book book);
+
+    @DELETE
+    @Path("/{name}")
+    public Book removeBook(@PathParam("name") String name);
 }
