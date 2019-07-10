@@ -45,6 +45,7 @@ public class LibraryEndpoints implements LibraryService {
     public Book addBookToLibrary(String name, Book book) {
         Library library = getLibrary(name);
         library.getBooks().add(book);
+        model.addBook(book);
         return book;
     }
 

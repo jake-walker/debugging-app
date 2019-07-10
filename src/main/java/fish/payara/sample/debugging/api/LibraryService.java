@@ -29,5 +29,4 @@ public interface LibraryService {
     @POST
     @Path("/{name}")
     public Book addBookToLibrary(@PathParam("name") String name, Book book);
-
 }
