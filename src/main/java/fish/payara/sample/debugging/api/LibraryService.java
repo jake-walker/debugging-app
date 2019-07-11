@@ -14,24 +14,24 @@ import fish.payara.sample.debugging.model.Library;
 public interface LibraryService {
 
     @GET
-    public Collection<Library> getAllLibraries();
+    Collection<Library> getAllLibraries();
 
     @GET
     @Path("/{id}")
-    public Library getLibrary(@PathParam("id") String name);
+    Library getLibrary(@PathParam("id") String name);
 
     @POST
-    public Library addLibrary(@Valid Library library);
+    Library addLibrary(@Valid Library library);
 
     @POST
     @Path("/{id}")
-    public Book addBookToLibrary(@PathParam("id") String id, Book book);
+    Book addBookToLibrary(@PathParam("id") String id, Book book);
 
     @DELETE
     @Path("/{id}/{bookId}")
-    public Book removeBookFromLibrary(@PathParam("id") String id, @PathParam("bookId") String bookId);
+    Book removeBookFromLibrary(@PathParam("id") String id, @PathParam("bookId") String bookId);
 
     @PUT
     @Path("/{id}")
-    public Library updateLibrary(@PathParam("id") String id, @Valid Library library);
+    Library updateLibrary(@PathParam("id") String id, @Valid Library library);
 }
