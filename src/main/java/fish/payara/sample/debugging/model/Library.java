@@ -5,7 +5,6 @@ import java.time.ZonedDateTime;
 import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.Objects;
-import java.util.UUID;
 
 /**
  * @author Matt Gill
@@ -20,14 +19,8 @@ public class Library {
 
     private Collection<Book> books;
 
-    public Library(String name) {
-        this.name = name;
-        this.books = new LinkedHashSet<>();
-        this.id = "l-" + UUID.randomUUID().toString().substring(0, 5).toLowerCase();
-    }
-
-    public Library() {
-        this(null);
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getId() {
@@ -49,6 +42,9 @@ public class Library {
     }
 
     void addBook(Book book) {
+        if (this.books == null) {
+            this.books = new LinkedHashSet<>();
+        }
         books.add(book);
         this.updated();
     }

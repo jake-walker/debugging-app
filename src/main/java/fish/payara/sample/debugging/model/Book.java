@@ -3,7 +3,6 @@ package fish.payara.sample.debugging.model;
 import javax.validation.constraints.NotBlank;
 import java.time.ZonedDateTime;
 import java.util.Objects;
-import java.util.UUID;
 
 /**
  * @author Matt Gill
@@ -19,14 +18,8 @@ public class Book {
     @NotBlank
     private String author;
 
-    public Book() {
-        this(null, null);
-    }
-
-    public Book(String name, String author) {
-        this.name = name;
-        this.author = author;
-        this.id = "b-" + UUID.randomUUID().toString().substring(0, 5).toLowerCase();
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getId() {
@@ -63,7 +56,7 @@ public class Book {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, author);
+        return Objects.hash(id, name, author);
     }
 
     private void updated() {
