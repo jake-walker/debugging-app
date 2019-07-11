@@ -50,4 +50,19 @@ public class Library {
     protected void removeBook(Book book) {
         books.remove(book);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Library library = (Library) o;
+        return Objects.equals(id, library.id) &&
+                Objects.equals(name, library.name) &&
+                Objects.equals(books, library.books);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, books);
+    }
 }
