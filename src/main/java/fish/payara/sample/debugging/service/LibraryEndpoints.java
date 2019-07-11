@@ -1,16 +1,15 @@
 package fish.payara.sample.debugging.service;
 
-import java.util.Collection;
+import fish.payara.sample.debugging.api.LibraryService;
+import fish.payara.sample.debugging.model.Book;
+import fish.payara.sample.debugging.model.Library;
+import fish.payara.sample.debugging.model.ServiceModel;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.NotFoundException;
 import javax.ws.rs.Path;
-
-import fish.payara.sample.debugging.api.LibraryService;
-import fish.payara.sample.debugging.model.Book;
-import fish.payara.sample.debugging.model.Library;
-import fish.payara.sample.debugging.model.ServiceModel;
+import java.util.Collection;
 
 /**
  * @author Matt Gill
@@ -53,7 +52,7 @@ public class LibraryEndpoints implements LibraryService {
         Library library = getLibrary(id);
         Book bookToAdd = getBook(book.getId());
         model.addBook(library, bookToAdd);
-        return book;
+        return bookToAdd;
     }
 
     @Override

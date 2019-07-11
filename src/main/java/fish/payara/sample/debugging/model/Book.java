@@ -1,6 +1,7 @@
 package fish.payara.sample.debugging.model;
 
 import javax.validation.constraints.NotBlank;
+import java.time.ZonedDateTime;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -8,7 +9,9 @@ import java.util.UUID;
  * @author Matt Gill
  */
 public class Book {
-    private String id = "b-" + UUID.randomUUID().toString().substring(0, 5).toLowerCase();
+    private String id;
+
+    private ZonedDateTime lastModified = ZonedDateTime.now();
 
     @NotBlank
     private String name;
@@ -17,11 +20,13 @@ public class Book {
     private String author;
 
     public Book() {
+        this(null, null);
     }
 
     public Book(String name, String author) {
         this.name = name;
         this.author = author;
+        this.id = "b-" + UUID.randomUUID().toString().substring(0, 5).toLowerCase();
     }
 
     public String getId() {
@@ -34,6 +39,7 @@ public class Book {
 
     public void setName(String name) {
         this.name = name;
+        this.updated();
     }
 
     public String getAuthor() {
@@ -42,6 +48,7 @@ public class Book {
 
     public void setAuthor(String author) {
         this.author = author;
+        this.updated();
     }
 
     @Override
@@ -57,5 +64,13 @@ public class Book {
     @Override
     public int hashCode() {
         return Objects.hash(name, author);
+    }
+
+    private void updated() {
+        this.lastModified = ZonedDateTime.now();
+    }
+
+    public ZonedDateTime getLastModified() {
+        return this.lastModified;
     }
 }
