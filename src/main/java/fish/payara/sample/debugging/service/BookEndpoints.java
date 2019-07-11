@@ -27,11 +27,11 @@ public class BookEndpoints implements BookService {
     }
 
     @Override
-    public Book getBook(String name) {
+    public Book getBook(String id) {
         return model.getBooks().stream()
-                .filter(book -> book.getName().equals(name))
+                .filter(book -> book.getId().equals(id))
                 .findAny()
-                .orElseThrow(() -> new NotFoundException("Unable to find the book with the specified name."));
+                .orElseThrow(() -> new NotFoundException("Unable to find the book with the specified ID."));
     }
 
     @Override
@@ -41,8 +41,8 @@ public class BookEndpoints implements BookService {
 
 
     @Override
-    public Book updateBook(String name, Book book) {
-        Book bookToUpdate = getBook(name);
+    public Book updateBook(String id, Book book) {
+        Book bookToUpdate = getBook(id);
 
         if (book.getName() != null) {
             bookToUpdate.setName(book.getName());
@@ -56,8 +56,8 @@ public class BookEndpoints implements BookService {
     }
 
     @Override
-    public Book removeBook(String name) {
-        Book book = getBook(name);
+    public Book removeBook(String id) {
+        Book book = getBook(id);
         return model.removeBook(book);
     }
 }

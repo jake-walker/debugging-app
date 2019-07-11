@@ -16,17 +16,17 @@ public interface BookService {
     public Collection<Book> getAllBooks();
 
     @GET
-    @Path("/{name}")
-    public Book getBook(@PathParam("name") String name);
+    @Path("/{id}")
+    public Book getBook(@PathParam("id") String id);
 
     @POST
     public Book addBook(@Valid Book book);
 
     @PUT
-    @Path("/{name}")
-    public Book updateBook(@PathParam("name") String name, Book book);
+    @Path("/{id}")
+    public Book updateBook(@PathParam("id") String id, Book book);
 
     @DELETE
-    @Path("/{name}")
-    public Book removeBook(@PathParam("name") String name);
+    @Path("/{id}")
+    public Book removeBook(@PathParam("id") String id);
 }

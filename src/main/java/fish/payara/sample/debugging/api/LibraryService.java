@@ -17,26 +17,26 @@ public interface LibraryService {
     public Collection<Library> getAllLibraries();
 
     @GET
-    @Path("/{name}")
-    public Library getLibrary(@PathParam("name") String name);
+    @Path("/{id}")
+    public Library getLibrary(@PathParam("id") String name);
 
     @POST
     public Library addLibrary(@Valid Library library);
 
     @POST
-    @Path("/{name}")
-    public Book addBookToLibrary(@PathParam("name") String name, Book book);
+    @Path("/{id}")
+    public Book addBookToLibrary(@PathParam("id") String id, Book book);
 
     @DELETE
-    @Path("/{name}/{bookName}")
-    public Book removeBookFromLibrary(@PathParam("name") String name, @PathParam("bookName") String bookName);
+    @Path("/{id}/{bookId}")
+    public Book removeBookFromLibrary(@PathParam("id") String id, @PathParam("bookId") String bookId);
 
     @PUT
-    @Path("/{name}")
-    public Library updateLibrary(@PathParam("name") String name, @Valid Library library);
+    @Path("/{id}")
+    public Library updateLibrary(@PathParam("id") String id, @Valid Library library);
 
     @POST
-    @Path("/{name}/{bookName}")
-    public Book addExistingBookToLibrary(@PathParam("name") String name, @PathParam("bookName") String bookName);
+    @Path("/{id}/{bookId}")
+    public Book addExistingBookToLibrary(@PathParam("id") String id, @PathParam("bookId") String bookId);
 
 }

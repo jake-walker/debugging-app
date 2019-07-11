@@ -28,18 +28,18 @@ public class LibraryEndpoints implements LibraryService {
     }
 
     @Override
-    public Library getLibrary(String name) {
+    public Library getLibrary(String id) {
         return model.getLibraries().stream()
-                .filter(library -> library.getName().equals(name))
+                .filter(library -> library.getId().equals(id))
                 .findAny()
-                .orElseThrow(() -> new NotFoundException("Unable to find the library with the specified name."));
+                .orElseThrow(() -> new NotFoundException("Unable to find the library with the specified ID."));
     }
 
-    public Book getBook(String name) {
+    public Book getBook(String id) {
         return model.getBooks().stream()
-                .filter(book -> book.getName().equals(name))
+                .filter(book -> book.getId().equals(id))
                 .findAny()
-                .orElseThrow(() -> new NotFoundException("Unable to find the book with the specified name."));
+                .orElseThrow(() -> new NotFoundException("Unable to find the book with the specified ID."));
     }
 
     @Override
@@ -49,23 +49,23 @@ public class LibraryEndpoints implements LibraryService {
     }
 
     @Override
-    public Book addBookToLibrary(String name, Book book) {
-        Library library = getLibrary(name);
+    public Book addBookToLibrary(String id, Book book) {
+        Library library = getLibrary(id);
         model.addBook(library, book);
         return book;
     }
 
     @Override
-    public Book removeBookFromLibrary(String name, String bookName) {
-        Library library = getLibrary(name);
-        Book book = getBook(bookName);
+    public Book removeBookFromLibrary(String id, String bookId) {
+        Library library = getLibrary(id);
+        Book book = getBook(bookId);
         model.removeBook(library, book);
         return book;
     }
 
     @Override
-    public Library updateLibrary(String name, Library library) {
-        Library libraryToUpdate = getLibrary(name);
+    public Library updateLibrary(String id, Library library) {
+        Library libraryToUpdate = getLibrary(id);
 
         if (library.getName() != null) {
             libraryToUpdate.setName(library.getName());
@@ -75,9 +75,9 @@ public class LibraryEndpoints implements LibraryService {
     }
 
     @Override
-    public Book addExistingBookToLibrary(String name, String bookName) {
-        Library library = getLibrary(name);
-        Book book = getBook(bookName);
+    public Book addExistingBookToLibrary(String id, String bookId) {
+        Library library = getLibrary(id);
+        Book book = getBook(bookId);
         model.addBook(library, book);
         return book;
     }

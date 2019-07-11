@@ -2,6 +2,8 @@ package fish.payara.sample.debugging.model;
 
 import java.util.Collection;
 import java.util.LinkedHashSet;
+import java.util.Objects;
+import java.util.UUID;
 
 import javax.validation.constraints.NotBlank;
 
@@ -9,6 +11,7 @@ import javax.validation.constraints.NotBlank;
  * @author Matt Gill
  */
 public class Library {
+    private String id = "l-" + UUID.randomUUID().toString().substring(0, 5).toLowerCase();
 
     @NotBlank
     private String name;
@@ -22,6 +25,10 @@ public class Library {
 
     public Library() {
         this(null);
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getName() {
