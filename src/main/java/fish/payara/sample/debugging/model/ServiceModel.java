@@ -1,11 +1,10 @@
 package fish.payara.sample.debugging.model;
 
-import static java.util.Collections.unmodifiableCollection;
-
+import javax.enterprise.context.ApplicationScoped;
 import java.util.Collection;
 import java.util.LinkedHashSet;
 
-import javax.enterprise.context.ApplicationScoped;
+import static java.util.Collections.unmodifiableCollection;
 
 /**
  * The service model for managing libraries and books.
@@ -13,7 +12,7 @@ import javax.enterprise.context.ApplicationScoped;
  * @author Matt Gill
  */
 @ApplicationScoped
-public class ServiceModel {
+public class ServiceModel extends Book {
 
     private Collection<Book> books;
     private Collection<Library> libraries;

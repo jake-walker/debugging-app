@@ -9,7 +9,7 @@ import java.util.Objects;
  *
  * @author Matt Gill
  */
-public class Book {
+public class Book extends Library {
     private String id;
 
     private ZonedDateTime lastModified = ZonedDateTime.now();

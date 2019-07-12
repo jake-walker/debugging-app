@@ -46,7 +46,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/debugging-app/api/books/IntelliJ Guide",
+							"raw": "http://localhost:8080/debugging-app/api/books/b-5ed5c",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -56,7 +56,29 @@
 								"debugging-app",
 								"api",
 								"books",
-								"IntelliJ Guide"
+								"b-5ed5c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bookUpdated",
+					"request": {
+						"method": "HEAD",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/debugging-app/api/books/b-5ed5c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"debugging-app",
+								"api",
+								"books",
+								"b-5ed5c"
 							]
 						}
 					},
@@ -100,7 +122,7 @@
 							"raw": "{\n\t\"author\": \"Janice Doe\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8080/debugging-app/api/books/IntelliJ Guide",
+							"raw": "http://localhost:8080/debugging-app/api/books/b-c78d8",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -110,7 +132,7 @@
 								"debugging-app",
 								"api",
 								"books",
-								"IntelliJ Guide"
+								"b-c78d8"
 							]
 						}
 					},
@@ -122,7 +144,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/debugging-app/api/books/IntelliJ Guide",
+							"raw": "http://localhost:8080/debugging-app/api/books/b-fe93a",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -132,7 +154,7 @@
 								"debugging-app",
 								"api",
 								"books",
-								"IntelliJ Guide"
+								"b-fe93a"
 							]
 						}
 					},
@@ -181,7 +203,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/debugging-app/api/libraries/Javatown Library",
+							"raw": "http://localhost:8080/debugging-app/api/libraries/l-b10b2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -191,7 +213,7 @@
 								"debugging-app",
 								"api",
 								"libraries",
-								"Javatown Library"
+								"l-b10b2"
 							]
 						}
 					},
@@ -232,10 +254,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\": \"Networking Basics\",\n\t\"author\": \"Dr Apple\"\n}"
+							"raw": "{\n\t\"id\": \"b-a6342\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8080/debugging-app/api/libraries/Javatown Library",
+							"raw": "http://localhost:8080/debugging-app/api/libraries/l-365ef",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -245,7 +267,7 @@
 								"debugging-app",
 								"api",
 								"libraries",
-								"Javatown Library"
+								"l-365ef"
 							]
 						}
 					},
@@ -257,7 +279,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/debugging-app/api/libraries/Javatown Library/Networking Basics",
+							"raw": "http://localhost:8080/debugging-app/api/libraries/6d389d7e-1444-4060-a275-3e3a427d7f91/52e5d37f-8d8f-424b-b61b-6b102a3b1176",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -267,8 +289,8 @@
 								"debugging-app",
 								"api",
 								"libraries",
-								"Javatown Library",
-								"Networking Basics"
+								"6d389d7e-1444-4060-a275-3e3a427d7f91",
+								"52e5d37f-8d8f-424b-b61b-6b102a3b1176"
 							]
 						}
 					},
@@ -291,6 +313,28 @@
 							"raw": "{\n\t\"name\": \"Downtown Library\"\n}"
 						},
 						"url": {
+							"raw": "http://localhost:8080/debugging-app/api/libraries/6d389d7e-1444-4060-a275-3e3a427d7f91",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"debugging-app",
+								"api",
+								"libraries",
+								"6d389d7e-1444-4060-a275-3e3a427d7f91"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeLibrary",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
 							"raw": "http://localhost:8080/debugging-app/api/libraries/Javatown Library",
 							"protocol": "http",
 							"host": [
@@ -302,29 +346,6 @@
 								"api",
 								"libraries",
 								"Javatown Library"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "addExistingBookToLibrary",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/debugging-app/api/libraries/Javatown Library/IntelliJ Guide",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"debugging-app",
-								"api",
-								"libraries",
-								"Javatown Library",
-								"IntelliJ Guide"
 							]
 						}
 					},
