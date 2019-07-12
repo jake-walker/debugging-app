@@ -1,21 +1,21 @@
 package fish.payara.sample.debugging.service.exception;
 
-import static java.util.Arrays.asList;
-import static javax.ws.rs.core.MediaType.APPLICATION_JSON_TYPE;
-import static javax.ws.rs.core.MediaType.APPLICATION_XML_TYPE;
-import static javax.ws.rs.core.MediaType.TEXT_PLAIN_TYPE;
-
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
 import javax.ws.rs.ext.ExceptionMapper;
+import java.util.HashSet;
+import java.util.Set;
+
+import static java.util.Arrays.asList;
+import static javax.ws.rs.core.MediaType.*;
 
 /**
+ * The type Custom exception mapper.
+ *
+ * @param <T> the type parameter
  * @author Matt Gill
  */
 public abstract class CustomExceptionMapper<T extends Throwable> implements ExceptionMapper<T> {
@@ -34,6 +34,12 @@ public abstract class CustomExceptionMapper<T extends Throwable> implements Exce
                 .build();
     }
 
+    /**
+     * Build response response builder.
+     *
+     * @param exception the exception
+     * @return the response builder
+     */
     protected abstract ResponseBuilder buildResponse(T exception);
 
     private MediaType getPreferredMediaType() {

@@ -5,7 +5,15 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * Tests for book objects.
+ *
+ * @author Jake Walker
+ */
 public class BookTest {
+    /**
+     * Test setting an ID on a book and making sure it is returned properly.
+     */
     @Test
     public void setId() {
         String testString = TestUtils.generateString();
@@ -14,6 +22,9 @@ public class BookTest {
         assertEquals(testString, book.getId());
     }
 
+    /**
+     * Test setting a name on a book and making sure it is returned properly.
+     */
     @Test
     public void setName() {
         String testString = TestUtils.generateString();

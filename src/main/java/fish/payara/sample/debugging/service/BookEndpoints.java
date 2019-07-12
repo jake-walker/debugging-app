@@ -1,17 +1,18 @@
 package fish.payara.sample.debugging.service;
 
-import java.util.Collection;
+import fish.payara.sample.debugging.api.BookService;
+import fish.payara.sample.debugging.model.Book;
+import fish.payara.sample.debugging.model.ServiceModel;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.NotFoundException;
 import javax.ws.rs.Path;
-
-import fish.payara.sample.debugging.api.BookService;
-import fish.payara.sample.debugging.model.Book;
-import fish.payara.sample.debugging.model.ServiceModel;
+import java.util.Collection;
 
 /**
+ * The book endpoints.
+ *
  * @author Matt Gill
  */
 @RequestScoped

@@ -6,10 +6,16 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
+/**
+ * Tests for the overall service model
+ */
 public class ServiceModelTest {
     private ServiceModel model = new ServiceModel();
     private Library library;
 
+    /**
+     * Prepare model.
+     */
     @Before
     public void prepareModel() {
         // Create a library
@@ -19,6 +25,9 @@ public class ServiceModelTest {
         this.model.getLibraries().add(library);
     }
 
+    /**
+     * Test that a new book added to library is added to library.
+     */
     @Test
     public void newBookAddedToLibraryIsAddedToLibrary() {
         String bookName = TestUtils.generateString();
@@ -34,6 +43,9 @@ public class ServiceModelTest {
         assertTrue(this.library.getBooks().contains(book));
     }
 
+    /**
+     * Test that a new book added to library is added to global list too.
+     */
     @Test
     public void newBookAddedToLibraryIsAddedToGlobalList() {
         String bookName = TestUtils.generateString();
@@ -49,6 +61,9 @@ public class ServiceModelTest {
         assertTrue(this.model.getBooks().contains(book));
     }
 
+    /**
+     * Test that a new book added to the global list is in global list.
+     */
     @Test
     public void newBookAddedToGlobalListIsInGlobalList() {
         String bookName = TestUtils.generateString();

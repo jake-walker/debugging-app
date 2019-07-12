@@ -1,16 +1,17 @@
 package fish.payara.sample.debugging.service.exception;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
 import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.ext.Provider;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
+ * Custom exception mapper for a Bean Validation error.
+ *
  * @author Matt Gill
  */
 @Provider

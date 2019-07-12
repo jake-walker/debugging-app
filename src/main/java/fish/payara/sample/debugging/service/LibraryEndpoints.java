@@ -12,6 +12,8 @@ import javax.ws.rs.Path;
 import java.util.Collection;
 
 /**
+ * The library endpoints.
+ *
  * @author Matt Gill
  */
 @RequestScoped
@@ -34,7 +36,13 @@ public class LibraryEndpoints implements LibraryService {
                 .orElseThrow(() -> new NotFoundException("Unable to find the library with the specified ID."));
     }
 
-    public Book getBook(String id) {
+    /**
+     * Get a books by it's ID.
+     *
+     * @param id the id of the book to find
+     * @return the book
+     */
+    private Book getBook(String id) {
         return model.getBooks().stream()
                 .filter(book -> book.getId().equals(id))
                 .findAny()

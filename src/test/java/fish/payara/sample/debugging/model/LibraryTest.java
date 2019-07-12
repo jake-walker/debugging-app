@@ -5,7 +5,13 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * Tests for library objects.
+ */
 public class LibraryTest {
+    /**
+     * Test setting an ID on a library and making sure it is returned properly.
+     */
     @Test
     public void setId() {
         String testString = TestUtils.generateString();
@@ -14,6 +20,9 @@ public class LibraryTest {
         assertEquals(testString, library.getId());
     }
 
+    /**
+     * Test setting a name on a library and making sure it is returned properly.
+     */
     @Test
     public void setName() {
         String testString = TestUtils.generateString();

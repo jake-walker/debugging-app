@@ -4,6 +4,8 @@ import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
 /**
+ * The Application config.
+ *
  * @author Matt Gill
  */
 @ApplicationPath("/api")

@@ -6,6 +6,8 @@ import javax.ws.rs.core.Response.ResponseBuilder;
 import javax.ws.rs.ext.Provider;
 
 /**
+ * The type Web application exception mapper.
+ *
  * @author Matt Gill
  */
 @Provider
